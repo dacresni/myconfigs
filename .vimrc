@@ -18,7 +18,7 @@ set smarttab
 "set matchpairs+=<:>
 "
 "" automaticly turn on autocompletion
-autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
+"autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
 autocmd FileType make set noexpandtab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -51,5 +51,8 @@ inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 autocmd Syntax html,vim inoremap < <lt>><Left>
+"pathogen, a vim plugin manager
+call pathogen#infect()
 
-
+"gundo
+nnoremap <F5> :GundoToggle<CR>
