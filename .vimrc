@@ -3,7 +3,11 @@ set ai
 set et
 set sw=4
 set smarttab
-
+""syntax on 
+""
+"pathogen, a vim plugin manager
+call pathogen#infect()
+filetype plugin indent on
 "in makefiles , don't expand tabs to spaces, sence actual tab characters are
 "needed
 "
@@ -28,6 +32,9 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complet
 autocmd FileType c++ set omnifunc=c++complete#Complet
+autocmd FileType tex let g:tex_conceal="adgm"
+
+
 
 "tab movement"
 "map <leader>tn :tabnext<cr>
@@ -44,15 +51,15 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 map <c-w><c-t> :TlistToggle<cr>
 
-""cscope functions 
+"" vim-latex commnad 
+
+""cscop functions 
 
 "auto close perenthcies
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 autocmd Syntax html,vim inoremap < <lt>><Left>
-"pathogen, a vim plugin manager
-call pathogen#infect()
 
 "gundo
 nnoremap <F5> :GundoToggle<CR>
