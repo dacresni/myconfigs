@@ -6,7 +6,7 @@ set smarttab
 ""syntax on 
 ""
 "pathogen, a vim plugin manager
-call pathogen#infect()
+"call pathogen#infect()
 filetype plugin indent on
 "in makefiles , don't expand tabs to spaces, sence actual tab characters are
 "needed
@@ -44,7 +44,7 @@ autocmd FileType tex let g:tex_conceal="adgm"
 "
 ""plugin settings
 "TagList plugin 
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Auto_Open = 1
 let Tlist_Process_File_Alwase = 0
 let Tlist_Exit_OnlyWindow = 1
