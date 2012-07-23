@@ -34,6 +34,7 @@ autocmd FileType c set omnifunc=ccomplete#Complet
 autocmd FileType c++ set omnifunc=c++complete#Complet
 autocmd FileType tex let g:tex_conceal="adgm"
 
+nnoremap <F5> :GundoToggle<CR>
 
 
 "tab movement"
@@ -62,4 +63,4 @@ inoremap { {}<Left>
 autocmd Syntax html,vim inoremap < <lt>><Left>
 
 "gundo
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <G> :GundoToggle<CR>
