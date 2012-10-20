@@ -6,7 +6,8 @@ set smarttab
 ""syntax on 
 ""
 "pathogen, a vim plugin manager
-"call pathogen#infect()
+call pathogen#infect()
+
 filetype plugin indent on
 "in makefiles , don't expand tabs to spaces, sence actual tab characters are
 "needed
@@ -37,19 +38,15 @@ autocmd FileType tex let g:tex_conceal="adgm"
 
 
 "tab movement"
-"map <leader>tn :tabnext<cr>
-"map <leader>tc :tabclose<cr>
-"map <leader>tm :tabmove 
-"map <tp> :tabprevious
+map <leader>tn :tabnext<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <tp> :tabprevious
 "
 ""plugin settings
-"TagList plugin 
-"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-let Tlist_Auto_Open = 1
-let Tlist_Process_File_Alwase = 0
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_Right_Window = 1
-map <c-w><c-t> :TlistToggle<cr>
+nmap <c-w><c-t> :TagbarToggle<CR>
+nmap <c-n> :NERDTreeToggle<CR>
+nnoremap <c-g> :GundoToggle<CR>
 
 "" vim-latex commnad 
 
@@ -61,5 +58,3 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 autocmd Syntax html,vim inoremap < <lt>><Left>
 
-"gundo
-nnoremap <F5> :GundoToggle<CR>
