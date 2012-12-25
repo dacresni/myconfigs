@@ -35,11 +35,6 @@ autocmd FileType c set omnifunc=ccomplete#Complet
 autocmd FileType c++ set omnifunc=c++complete#Complet
 autocmd FileType tex let g:tex_conceal="adgm"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> removed extra gundo mapping
-
 "tab movement"
 map <leader>tn :tabnext<cr>
 map <leader>tc :tabclose<cr>
