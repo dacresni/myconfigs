@@ -1,4 +1,5 @@
 syntax on
+filetype off "required for vundle
 set ai
 set et
 set sw=4
@@ -6,11 +7,21 @@ set smarttab
 ""syntax on 
 ""
 "pathogen, a vim plugin manager
-call pathogen#infect()
+"call pathogen#infect()
+"call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-filetype plugin indent on
-"in makefiles , don't expand tabs to spaces, sence actual tab characters are
-"needed
+" plugins (via vundler)
+Bundle 'gmark/vundle'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'majutsushii/tagbar'
+Bundle 'tpope/vim-rails.git'
+
+filetype plugin indent on 
 "
 ""abreviations for Cmacros
 :ab #d #define
@@ -20,11 +31,12 @@ filetype plugin indent on
 :ab if__name 'if __name__ == "__main__" 
 :ab imp import
 "match pairs of angled rackets '< >'
-"set matchpairs+=<:>
+set matchpairs+=<:>
 "
 "" automaticly turn on autocompletion
 "autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
 autocmd FileType make set noexpandtab
+"in makefiles , don't expand tabs to spaces, sence actual tab characters are needed
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -35,17 +47,15 @@ autocmd FileType c set omnifunc=ccomplete#Complet
 autocmd FileType c++ set omnifunc=c++complete#Complet
 autocmd FileType tex let g:tex_conceal="adgm"
 
+"powerline config 
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
-"tab movement"
-map <leader>tn :tabnext<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <tp> :tabprevious
-"
+
 ""plugin settings
-nmap <c-w><c-t> :TagbarToggle<CR>
-nmap <c-n> :NERDTreeToggle<CR>
-nnoremap <c-g> :GundoToggle<CR>
+
+map <c-w><c-t> :TagbarToggle<cr>
 
 "" vim-latex commnad 
 
@@ -57,3 +67,11 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 autocmd Syntax html,vim inoremap < <lt>><Left>
 
+"gundo
+nnoremap <G> :GundoToggle<CR>
+
+"syntastic stuff
+
+let g:syntastic_auto_loc_list=1
+let g:syntastic_disabled_filetypes=['html']
+let g:syntastic_enable_signs=1
