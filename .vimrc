@@ -15,10 +15,11 @@ call vundle#rc()
 " plugins (via vundler)
 Bundle 'gmark/vundle'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'majutsushii/tagbar'
+Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-rails.git'
 
 filetype plugin indent on 
