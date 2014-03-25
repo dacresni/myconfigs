@@ -21,6 +21,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-rails.git'
+Bundle 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
 
 filetype plugin indent on 
 "
@@ -74,5 +75,6 @@ nnoremap <G> :GundoToggle<CR>
 "syntastic stuff
 
 let g:syntastic_auto_loc_list=1
-let g:syntastic_disabled_filetypes=['html']
+"let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
+let g:syntastic_javascript_checkers = ['jshint']
