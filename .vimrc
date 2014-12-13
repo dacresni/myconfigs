@@ -19,7 +19,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-rails.git'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'faith/vim-go', {'rtp': 'vim/'}
+Plugin 'fatih/vim-go'
+Plugin 'rjohnsondev/vim-compiler-go'
+Plugin 'dgryski/vim-godef'
+Plugin 'vim-jp/vim-go-extra'
 Plugin 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
 
 filetype plugin indent on 
