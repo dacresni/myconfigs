@@ -6,22 +6,21 @@ set sw=4
 set smarttab
 ""syntax on 
 ""
-"pathogen, a vim plugin manager
-"call pathogen#infect()
-"call pathogen#helptags()
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " plugins (via vundler)
-Bundle 'gmark/vundle'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-rails.git'
-Bundle 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
+Plugin 'gmark/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-rails.git'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'faith/vim-go', {'rtp': 'vim/'}
+Plugin 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
 
 filetype plugin indent on 
 "
