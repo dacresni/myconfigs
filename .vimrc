@@ -10,7 +10,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " plugins (via vundler)
-Plugin 'gmark/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
@@ -24,8 +24,8 @@ Plugin 'rjohnsondev/vim-compiler-go'
 Plugin 'dgryski/vim-godef'
 Plugin 'vim-jp/vim-go-extra'
 Plugin 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
-
-filetype plugin indent on 
+call vundle#end() 
+filetype plugin on 
 "
 ""abreviations for Cmacros
 :ab #d #define
@@ -41,14 +41,6 @@ set matchpairs+=<:>
 "autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
 autocmd FileType make set noexpandtab
 "in makefiles , don't expand tabs to spaces, sence actual tab characters are needed
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complet
-autocmd FileType c++ set omnifunc=c++complete#Complet
 autocmd FileType tex let g:tex_conceal="adgm"
 
 "powerline config 
