@@ -1,0 +1,24 @@
+---
+
+- hosts: binah
+  vars: 
+    dns: dacr.us
+    username: dacresni
+
+  tasks:
+  - name: add dacresni
+    user: name=dacresni comment="Nehemiah Dacres" append=yes groups='wheel'
+  - name: update all
+    dnf: name='*' state=latest
+  - name: add tools
+    dnf: name={{item}} state=installed
+    with_items:  
+      - git
+      - tmux
+      - ctags-etags
+      - vim-enhanced
+      - ansible
+  - name: pull configs
+  - get_url: url={{item}} dest="~dacresni/"
+    with_items: 
+      - "https://raw.githubusercontent.com/dacresni/myconfigs/master/.vimrc"
