@@ -22,3 +22,4 @@
   - get_url: url={{item}} dest="~dacresni/"
     with_items: 
       - "https://raw.githubusercontent.com/dacresni/myconfigs/master/.vimrc"
+      - "https://raw.githubusercontent.com/dacresni/myconfigs/master/.inputrc"
