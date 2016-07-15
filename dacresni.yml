@@ -1,0 +1,25 @@
+---
+ - hosts: binah
+
+   vars_prompt:
+    - name: "pass"
+      prompt: password
+      private: yes
+
+   tasks:
+    - name: update packages
+      dnf: name='*' state=latest
+    - name: useradd nemo
+      user: name=nemo groups=wheel state=present password={{pass}}
+    - name: install vim
+      dnf: name=vim state=installed
+    - name: tmux
+      dnf: name=tmux state=installed
+    - name: install git
+      dnf: name=git state=installed
+    - name: pull vundler
+      git: repo='https://github.com/VundleVim/Vundle.vim.git dest=/home/nemo/.vim/bundle/Vundle.vim'
+    - name: pull vimrc
+      get_url: url='https://raw.githubusercontent.com/dacresni/myconfigs/master/.vimrc' dest=/home/nemo/.vimrc
+    - name: pull inpurc
+      get_url: url='https://raw.githubusercontent.com/dacresni/myconfigs/master/.inputrc' dest=/home/nemo/.inputrc
