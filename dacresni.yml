@@ -17,6 +17,8 @@
       dnf: name=tmux state=installed
     - name: install git
       dnf: name=git state=installed
+    - name: install tig
+      dnf: name=git state=installed
     - name: pull vundler
       git: repo='https://github.com/VundleVim/Vundle.vim.git dest=/home/nemo/.vim/bundle/Vundle.vim'
     - name: pull vimrc
