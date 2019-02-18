@@ -12,19 +12,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-rails.git'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'fatih/vim-go'
-Plugin 'rjohnsondev/vim-compiler-go'
-Plugin 'dgryski/vim-godef'
-Plugin 'vim-jp/vim-go-extra'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rust-lang/rust.vim'
+
 call vundle#end()
 filetype plugin indent on 
-"
 ""abreviations for Cmacros
 :ab #d #define
 :ab #i #include
@@ -34,6 +28,7 @@ filetype plugin indent on
 :ab imp import
 "match pairs of angled rackets '< >'
 set matchpairs+=<:>
+set number relativenumber 
 "
 "" automaticly turn on autocompletion
 "autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
@@ -74,5 +69,5 @@ let g:airline#extensions#tabline#enabled = 1
 let g:syntastic_auto_loc_list=1
 "let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_python_checkers = ['flak8']
