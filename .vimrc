@@ -2,7 +2,7 @@ syntax on
 filetype off "required for vundle
 "set ai
 set et
-set sw=4
+set sw=2
 set smarttab
 ""syntax on 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -10,7 +10,7 @@ call vundle#begin()
 
 " plugins (via vundler)
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
@@ -30,20 +30,10 @@ filetype plugin indent on
 set matchpairs+=<:>
 set number relativenumber 
 "
-"" automaticly turn on autocompletion
-"autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
-autocmd FileType make set noexpandtab
+" automaticly turn on autocompletion
+autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
 "in makefiles , don't expand tabs to spaces, sence actual tab characters are needed
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complet
-autocmd FileType c++ set omnifunc=c++complete#Complet
-autocmd FileType tex let g:tex_conceal="adgm"
-
+autocmd FileType make set noexpandtab
 
 ""plugin settings
 
@@ -70,4 +60,4 @@ let g:syntastic_auto_loc_list=1
 "let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_python_checkers = ['flak8']
+let g:syntastic_python_checkers = ['pip8']
