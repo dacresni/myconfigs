@@ -54,10 +54,6 @@ autocmd Syntax html,vim inoremap < <lt>><Left>
 nnoremap <G> :GundoToggle<CR>
 "airline enable tabs for buffers
 let g:airline#extensions#tabline#enabled = 1
+"ale plugin configs 
+let b:ale_fixers = ['prettier', 'eslint']
 
-"syntastic stuff
-let g:syntastic_auto_loc_list=1
-"let g:syntastic_disabled_filetypes=['html']
-let g:syntastic_enable_signs=1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_checkers = ['pip8']
