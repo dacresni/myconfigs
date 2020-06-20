@@ -1,0 +1,12 @@
+---
+- hosts: backup
+  tasks:
+    - name: add repo
+      get_url:
+        url: http://download.bareos.org/bareos/release/latest/Fedora_31/bareos.repo
+        dest: /etc/yum.repos.d/bareos.repo
+
+    - name: install backula 
+      dnf:
+        name: [bareos,bareos-database-postgresql,bareos-webui]
+        state: present

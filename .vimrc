@@ -13,10 +13,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rust-lang/rust.vim'
-
+Plugin 'cespare/vim-toml'
 call vundle#end()
 filetype plugin indent on 
 ""abreviations for Cmacros
@@ -38,7 +39,7 @@ autocmd FileType make set noexpandtab
 ""plugin settings
 
 map <c-w><c-t> :TagbarToggle<cr>
-map <c-w><c-b> :NERDTreeToggle<cr>
+map <c-w><c-g> :NERDTreeToggle<cr>
 
 "" vim-latex commnad 
 

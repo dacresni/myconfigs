@@ -1,0 +1,36 @@
+---
+- hosts: database
+  tasks:
+    - name: install pgdg repo
+      dnf:
+        name: "{{item}}"
+        state: present
+      loop: 
+        - postgresql
+        - postgresql-server 
+        - python3-psycopg2
+        - https://download.postgresql.org/pub/repos/yum/reporpms/F-31-x86_64/pgdg-fedora-repo-latest.noarch.rpm
+        - pgbackrest
+
+    - name: initialize the database 
+      command:
+        cmd: initdb 
+      become: yes
+      become_user: postgres
+
+    - name: enable automatic start
+      systemd:
+        name: postgresql
+        state: started
+        enabled: yes
+    - name:  add service to firewall 
+      firewalld: 
+        service: postgres
+        zone: internal
+        permanent: yes
+        state: enabled 
+    - name: create bacula user
+      postgresql_user:
+        name: bacula 
+        password: bacula
+        role_attr_flags: CREATEDB,NOSUPERUSER
