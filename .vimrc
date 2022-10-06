@@ -5,28 +5,31 @@ set et
 set sw=2
 set smarttab
 ""syntax on 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" plugins (via vundler)
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'dense-analysis/ale'
-Plugin 'scrooloose/nerdtree'
-Plugin 'universal-ctags/ctags'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-dispatch'
-Plugin 'rlue/vim-fold-rspec'
-Plugin 'mattn/emmet-vim'
-Plugin 'nelsyeung/twig.vim'
-Plugin 'thoughtbot/vim-rspec'
-call vundle#end()
+call plug#begin()
+
+" plugins (via vimplug)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lbrayner/vim-rzip'
+Plug 'dense-analysis/ale'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'universal-ctags/ctags'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'dyng/ctrlsf.vim'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-dispatch'
+Plug 'rlue/vim-fold-rspec'
+Plug 'mattn/emmet-vim'
+Plug 'nelsyeung/twig.vim'
+Plug 'thoughtbot/vim-rspec'
+call plug#end()
+
 
 
 
@@ -98,7 +101,6 @@ let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
 let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 let g:ale_fixers = {'php': ['php-cs-fixer']}
 "per buffer fixer
-let b:ale_fixers = ['prettier', 'eslint'] 
 let g:deoplete#enable_at_startup = 1
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_type_ruby = {
